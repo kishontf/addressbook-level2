@@ -12,6 +12,7 @@ import seedu.addressbook.ui.TextUi;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.io.FileNotFoundException;
 
 
 /**
@@ -31,12 +32,12 @@ public class Main {
     private List<? extends ReadOnlyPerson> lastShownList = Collections.emptyList();
 
 
-    public static void main(String... launchArgs) {
+    public static void main(String... launchArgs) throws FileNotFoundException {
         new Main().run(launchArgs);
     }
 
     /** Runs the program until termination.  */
-    public void run(String[] launchArgs) {
+    public void run(String[] launchArgs) throws FileNotFoundException {
         start(launchArgs);
         runCommandLoopUntilExitCommand();
         exit();
@@ -48,7 +49,7 @@ public class Main {
      * @param launchArgs arguments supplied by the user at program launch
      *
      */
-    private void start(String[] launchArgs) {
+    private void start(String[] launchArgs) throws FileNotFoundException {
         try {
             this.ui = new TextUi();
             this.storage = initializeStorage(launchArgs);
