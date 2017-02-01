@@ -125,7 +125,7 @@ public class TextUi {
         if (resultPersons.isPresent()) {
             showPersonListView(resultPersons.get());
         }
-        showToUser(result.getFeedbackToUser(), DIVIDER);
+        showToUser(result.feedbackToUser, DIVIDER);
     }
 
     /**
